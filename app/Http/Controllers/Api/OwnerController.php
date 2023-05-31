@@ -24,15 +24,15 @@ class OwnerController extends Controller
      */
     public function store(OwnerRequest $request)
     {
-        $owner = new Owner();
-        $owner->name = $request->name;
+        $owner = Owner::create($request->validated());   
+        $owner->trailers()->attach($request->trailers);
         return new OwnerResource($owner);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(owner $owner)
+    public function show(Owner $owner)
     {
         return new OwnerResource($owner);
     }
@@ -40,9 +40,10 @@ class OwnerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, owner $owner)
+    public function update(OwnerRequest $request, owner $owner)
     {
-        
+        $owner->update($request->validated());
+        return new OwnerResource($owner);
     }
 
     /**
@@ -50,6 +51,7 @@ class OwnerController extends Controller
      */
     public function destroy(owner $owner)
     {
-        //
+        $owner->delete();
+        return response()->noContent();
     }
 }

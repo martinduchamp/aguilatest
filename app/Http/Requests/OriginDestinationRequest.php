@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OwnerRequest extends FormRequest
+class OriginDestinationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,15 @@ class OwnerRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'trailers[]' => 'exists:trailers,is'
+            'address' => ['required'],
+            'street' => ['required'],
+            'rfc' => ['required'],
+            'postal_code' => ['required'],
+            'city' => ['required'],
+            'exterior_number' => ['required'],
+            'interior_number' => [''],
+            'country' => ['required'],
+            'state' => ['required'],
         ];
     }
 }
