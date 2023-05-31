@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\CustomersController;
+use App\Http\Controllers\Api\EmailController;
 use App\Http\Controllers\Api\OriginDestinationController;
 use App\Http\Controllers\Api\OwnerController;
 use App\Http\Controllers\Api\RouteController;
@@ -29,3 +32,5 @@ Route::apiResource('owners', OwnerController::class);
 Route::apiResource('routes', RouteController::class);
 Route::apiResource('validity_concepts', ValidityConceptController::class);
 Route::apiResource('origin_destinations', OriginDestinationController::class);
+Route::apiResource('customers', CustomerController::class);
+Route::apiResource('customer_emails', EmailController::class);

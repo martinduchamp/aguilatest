@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('validities', function (Blueprint $table) {
+        Schema::create('emails', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
+            $table->bigInteger('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers')->onCascade('delete');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('validities');
+        Schema::dropIfExists('emails');
     }
 };
