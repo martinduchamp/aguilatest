@@ -24,8 +24,24 @@ class CustomerController extends Controller
     public function store(CustomerRequest $request)
     {
     //   return $request;
-    $validated = $request->validated();
-        $customer = Customer::created($validated);
+    // $customer = new Customer();
+    // $customer->name = $request->name;
+    // $customer->address = $request->address;
+    // $customer->postal_code = $request->postal_code;
+    // $customer->state = $request->state;
+    // $customer->city = $request->city;
+    // $customer->country = $request->country;
+    // $customer->area = $request->area;
+    // $customer->rfc = $request->rfc;
+    // $customer->currency = $request->currency;
+    // $customer->bank_account = $request->bank_account;
+    // $customer->tax_regime = $request->tax_regime;
+    // $customer->payment_type = $request->payment_type;
+    // $customer->withholding = $request->withholding;
+    // $customer->iva_rate = $request->iva_rate;
+    // $customer->ledger_account = $request->ledger_account;
+    // $customer->save();
+    $customer = Customer::created($request->validated());
         return new CustomerResource($customer);
     }
 

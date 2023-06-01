@@ -25,7 +25,7 @@ class CustomerRequest extends FormRequest
             "name" => ['nullable'],
             "address" => ['nullable'],
             "postal_code" => ['nullable'],
-            "sate" => ['nullable'],
+            "state" => ['nullable'],
             "city" => ['nullable'],
             "country" => ['nullable'],
             "area" => ['nullable'],
