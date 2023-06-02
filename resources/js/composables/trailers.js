@@ -26,10 +26,15 @@ export default function useTrailers() {
         }
     }
 
+    const destroyTrailer = async (id) => {
+        await axios.delete('/api/trailers/' + id);
+    }
+
     return {
         trailers, 
         getTrailers,
         storeTrailer,
+        destroyTrailer,
         errors
     }
 }

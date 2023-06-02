@@ -21,7 +21,8 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-3  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Buscar">
                     </div>
-                    <router-link :to="{ name: 'trailers.create' }" class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
+                    <router-link :to="{ name: 'trailers.create' }"
+                        class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
                         AGREGAR REMOLQUE
                     </router-link>
                     <!-- <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2">
@@ -54,7 +55,7 @@
                                 class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
                                 <a href="#"
                                     class="font-medium text-blue-600 dark:text-red-500 hover:underline mx-3">EDITAR</a>
-                                <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</a>
+                                <a href="#" @click="deleteTrailer(trailer.id)" class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</a>
                             </td>
                         </tr>
                     </template>
@@ -72,12 +73,21 @@ import { onMounted } from 'vue';
 
 export default {
     setup() {
-        const { trailers, getTrailers } = useTrailers();
+        const { trailers, getTrailers, destroyTrailer } = useTrailers();
 
         onMounted(getTrailers());
 
+        const deleteTrailer = async (id) => {
+            if (!window.confirm('Estas seguro?')) {
+                return;
+            }
+            await destroyTrailer(id);
+            await getTrailers();
+        }
+
         return {
-            trailers
+            trailers,
+            deleteTrailer,
         }
     }
 }
