@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TrailerRequest;
 use App\Http\Resources\TrailerResource;
 use App\Models\Trailer;
 use Illuminate\Http\Request;
@@ -21,9 +22,9 @@ class TrailerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TrailerRequest $request)
     {
-        $trailer = new Trailer();
+        $trailer = Trailer::create($request->validated()); 
         return new TrailerResource($trailer);
     }
 
