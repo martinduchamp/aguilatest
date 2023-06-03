@@ -20,18 +20,18 @@
                     <ul
                         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
 
-                            <li  v-for="trailer in trailers" :key="trailer.id" class="uppercase w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                <div class="flex items-center pl-3">
-                                    <input id="vue-checkbox" type="checkbox"  
-                                    
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="vue-checkbox"
-                                        class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                        {{ trailer.name }}  
-                                    </label>
-                                </div>
-                            </li>
-                     
+                        <li v-for="trailer in trailers" :key="trailer.id"
+                            class="uppercase w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                            <div class="flex items-center pl-3">
+                                <input id="vue-checkbox" type="checkbox" :value="trailer.id" v-model="trailersattach"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                <label for="vue-checkbox"
+                                    class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                    {{ trailer.name }}
+                                </label>
+                            </div>
+                        </li>
+
 
 
                     </ul>
@@ -42,7 +42,7 @@
                 <button
                     class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="submit">
-                    Crear
+                    GUARDAR
                 </button>
             </div>
         </form>
@@ -54,6 +54,7 @@ import { ref } from "vue";
 import useOwners from '../../composables/owners';
 import useTrailers from '../../composables/trailers'
 import { onMounted } from 'vue';
+import { isProxy, toRaw } from 'vue';
 
 export default {
     props: {
@@ -63,31 +64,35 @@ export default {
         }
     },
     setup(props) {
-        const { errors, owner, updateOwner, getOwner } = useOwners();
+        const { errors, storeOwner, getOwner, owner, updateOwner, trailersattach } = useOwners();
         const { getTrailers, trailers } = useTrailers();
 
-      
-        function isChecked(id) {
-        //    for (let i = 0; i < owner.trailers.length; i++) {
-        //     const element = owner.trailers[i];
-        //     if(element.id == id) {
-        //         return true;
-        //     }
-        //    }   
-        }
-
-        onMounted(()=> {
-            getTrailers();
-            getOwner(props.id);
-            console.log(owner['trailers']);
-           
+        const form = reactive({
+            'name': "test",
+            'owner': owner,
+            'trailers': trailersattach
         })
 
+
+
+
+        const saveOwner = async () => {
+            await updateOwner(props.id, {...form})
+        }
+
+        onMounted(() => {
+            getTrailers()
+            getOwner(props.id)
+           console.log(owner.value)
+        });
+
         return {
+            form,
             errors,
+            saveOwner,
             trailers,
-            owner,
-            isChecked
+            trailersattach,
+            owner
         }
     }
 }

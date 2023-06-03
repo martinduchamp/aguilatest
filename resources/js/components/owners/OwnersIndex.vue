@@ -20,10 +20,17 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-3  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Buscar">
                     </div>
-                    <router-link :to="{ name: 'owners.create' }"
-                        class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
-                        AGREGAR PROPIETARIO
-                    </router-link>
+                    <div>
+                        <router-link :to="{ name: 'owners.create' }"
+                            class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
+                            AGREGAR PROPIETARIO
+                        </router-link>
+                        <router-link :to="{ name: 'trailers.index' }"
+                            class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
+                            REMOLQUES
+                        </router-link>
+                    </div>
+
                     <!-- <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2">
         
     </button> -->
@@ -63,16 +70,15 @@
                                 <!-- <a href="#"
                                     class="font-medium text-blue-600 dark:text-red-500 hover:underline mx-3">EDITAR</a> -->
                                 <router-link :to="{ name: 'owners.edit', params: { id: owner.id } }"
-                                            class="mx-2 text-blue-500 hover:text-blue-700" href="#">Editar</router-link>
-                                <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</a>
+                                    class="mx-2 text-blue-500 hover:text-blue-700" href="#">Editar</router-link>
+                                <a href="#" @click="deleteOwner(owner.id)"
+                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</a>
                             </td>
                         </tr>
                     </template>
                 </tbody>
             </table>
-
         </div>
-
     </div>
 </template>
 
@@ -82,12 +88,21 @@ import { onMounted } from 'vue';
 
 export default {
     setup() {
-        const { owners, getOwners } = useOwners();
+        const { owners, getOwners, destroyOwner } = useOwners();
 
         onMounted(getOwners());
 
+        const deleteOwner = async (id) => {
+            if (!window.confirm('Estas seguro?')) {
+                return;
+            }
+            await destroyOwner(id);
+            await getOwners();
+        }
+
         return {
-            owners
+            owners,
+            deleteOwner
         }
     }
 }

@@ -53,8 +53,8 @@
                                 {{ trailer.name }}</td>
                             <td
                                 class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-red-500 hover:underline mx-3">EDITAR</a>
+                                <router-link :to="{ name: 'trailers.edit', params: { id: trailer.id } }"
+                                    class="mx-2 text-blue-500 hover:text-blue-700" href="#">Editar</router-link>
                                 <a href="#" @click="deleteTrailer(trailer.id)" class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</a>
                             </td>
                         </tr>

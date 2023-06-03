@@ -5,36 +5,56 @@ import { useRouter } from "vue-router";
 export default function useTrailers() {
     const trailer = ref([]);
     const trailers = ref([]);
-    const errors = ref('');
+    const errors = ref("");
     const router = useRouter();
 
-    const getTrailers = async() => {
-        let response = await axios.get('/api/trailers');
-        trailers.value = response.data.data;
-    }
+    const getTrailer = async (id) => {
+        let response = await axios.get("/api/trailers/" + id);
+        trailer.value = response.data.data;
+    };
 
-    const storeTrailer = async(data) => {
-        errors.value = '';
+    const getTrailers = async () => {
+        let response = await axios.get("/api/trailers");
+        trailers.value = response.data.data;
+    };
+
+    const storeTrailer = async (data) => {
+        errors.value = "";
         try {
-            await axios.post('/api/trailers/', data);
-            await router.push({name: 'trailers.index'})
+            await axios.post("/api/trailers/", data);
+            await router.push({ name: "trailers.index" });
         } catch (e) {
             console.log(e);
             if (e.response.status == 422) {
-                errors.value = e
+                errors.value = e;
             }
         }
-    }
+    };
+
+    const updateTrailer = async (id) => {
+        errors.value = "";
+        try {
+            await axios.put("/api/trailers/" + id, trailer.value);
+            await router.push({ name: "trailers.index" });
+        } catch (e) {
+            if (e.response.status === 422) {
+                errors.value = e.response.data.errors;
+            }
+        }
+    };
 
     const destroyTrailer = async (id) => {
-        await axios.delete('/api/trailers/' + id);
-    }
+        await axios.delete("/api/trailers/" + id);
+    };
 
     return {
-        trailers, 
+        trailers,
         getTrailers,
+        getTrailer,
         storeTrailer,
         destroyTrailer,
-        errors
-    }
+        updateTrailer,
+        trailer,
+        errors,
+    };
 }

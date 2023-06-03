@@ -39,9 +39,10 @@ class TrailerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, trailer $trailer)
+    public function update(TrailerRequest $request, trailer $trailer)
     {
-        $trailer->update($request->validate());
+        
+        $trailer->update($request->validated());
         return new TrailerResource($trailer);
     }
 

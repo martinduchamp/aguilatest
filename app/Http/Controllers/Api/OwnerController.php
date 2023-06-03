@@ -24,7 +24,7 @@ class OwnerController extends Controller
      */
     public function store(OwnerRequest $request)
     {
-        $owner = Owner::create($request->validated());   
+        $owner = Owner::create($request->validated());
         $owner->trailers()->attach($request->trailers);
         return new OwnerResource($owner);
     }
@@ -42,7 +42,10 @@ class OwnerController extends Controller
      */
     public function update(OwnerRequest $request, owner $owner)
     {
-        $owner->update($request->validated());
+
+        $owner->name =  $request->owner['name'];
+        $owner->trailers()->sync($request->trailers);
+        $owner->save();
         return new OwnerResource($owner);
     }
 
