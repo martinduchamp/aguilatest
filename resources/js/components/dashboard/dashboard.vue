@@ -94,7 +94,7 @@
               <li>
                 <ul role="list" class="-mx-2 space-y-1">
                   <li v-for="(item, index) in navigation" :key="item.in">
-                    <router-link @click.native="cc(index)" :to="{ name: item.href }" :href="item.href" :class="[item.current ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:text-white hover:bg-indigo-700', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                    <router-link @click.native="cc(index)" :to="{ name: item.href }"  :class="[item.current ? 'bg-indigo-700 text-white' : 'text-indigo-200 hover:text-white hover:bg-indigo-700', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                       <component :is="item.icon" :class="[item.current ? 'text-white' : 'text-indigo-200 group-hover:text-white', 'h-6 w-6 shrink-0']" aria-hidden="true" />
                       {{ item.name }}
                     </router-link>
