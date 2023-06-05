@@ -208,12 +208,8 @@
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   
   const navigation = [
-    { name: 'Remolques', href: 'trailers.index', icon: HomeIcon, current: true },
+    { name: 'Catalogos', href: 'catalogs.index', icon: HomeIcon, current: true },
     { name: 'Propietarios', href: 'owners.index', icon: UsersIcon, current: false },
-    { name: 'Projects', href: 'trailers.index', icon: FolderIcon, current: false },
-    { name: 'Calendar', href: 'trailers.index', icon: CalendarIcon, current: false },
-    { name: 'Documents', href: 'trailers.index', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Reports', href: 'trailers.index', icon: ChartPieIcon, current: false },
   ]
   const teams = [
     { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },

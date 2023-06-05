@@ -8,6 +8,7 @@ import OwnersEdit from "../components/owners/OwnersEdit.vue";
 import TrailersIndex from "../components/trailers/TrailersIndex.vue";
 import TrailersCreate from "../components/trailers/TrailersCreate.vue";
 import TrailersEdit from "../components/trailers/TrailersEdit.vue";
+import Catalogs from "../components/catalogs/Catalogs.vue";
 
 const routes = [
     // DASHBOARD
@@ -16,6 +17,12 @@ const routes = [
         name: "dashboard.index",
         component: Dashboard,
         children: [
+            // CATALOGS
+            {
+                path: "/catalogs",
+                name: "catalogs.index",
+                component: Catalogs,
+            },
             // OWNERS
             {
                 path: "/owners",
