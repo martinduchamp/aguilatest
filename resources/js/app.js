@@ -9,9 +9,10 @@
 import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import router from './router';
 import OwnersIndex from './components/owners/OwnersIndex.vue'
+import Dashboard from "../js/components/dashboard/dashboard.vue"
 
     createApp({
     components: {
-        OwnersIndex,
+        Dashboard,
     }
 }).use(router).mount('#app');
