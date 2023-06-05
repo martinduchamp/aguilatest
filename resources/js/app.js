@@ -15,4 +15,11 @@ import Dashboard from "../js/components/dashboard/dashboard.vue"
     components: {
         Dashboard,
     }
-}).use(router).mount('#app');
+}).use(router).directive('uppercase', {
+    bind(el, _, vnode) {
+      el.addEventListener('input', (e) => {
+        e.target.value = e.target.value.toUpperCase()
+        vnode.componentInstance.$emit('input', e.target.value.toUpperCase())
+      })
+    },
+  }).mount('#app');

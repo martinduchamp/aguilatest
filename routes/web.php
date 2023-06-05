@@ -25,6 +25,11 @@ Route::get('/dashboard', function () {
 Route::get('/owners', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('owners');
+
+Route::get('/routes', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('routes');
+
 Route::get('/trailers', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('trailers');

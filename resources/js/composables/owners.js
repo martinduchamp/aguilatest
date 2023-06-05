@@ -34,7 +34,7 @@ export default function useOwners() {
     const storeOwner = async (data) => {
         errors.value = "";
         try {
-            await axios.post("/api/owners/", data);
+            await axios.post("/api/owners", data);
             await router.push({ name: "owners.index" });
         } catch (e) {
             console.log(e);

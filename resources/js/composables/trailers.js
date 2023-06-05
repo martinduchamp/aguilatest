@@ -21,7 +21,7 @@ export default function useTrailers() {
     const storeTrailer = async (data) => {
         errors.value = "";
         try {
-            await axios.post("/api/trailers/", data);
+            await axios.post("/api/trailers", data);
             await router.push({ name: "trailers.index" });
         } catch (e) {
             console.log(e);

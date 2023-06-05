@@ -13,16 +13,14 @@
                 <p class="text-sm font-medium text-gray-900">{{ catalog.name }}</p>
             </router-link>
         </div>
-
-
-
-
     </div>
 </template>
   
 <script setup>
 import {
-    TruckIcon
+    TruckIcon,
+    MapIcon,
+    MapPinIcon
 } from '@heroicons/vue/24/outline'
 const people = [
 
@@ -40,6 +38,16 @@ const catalogs = [
         name: 'REMOLQUES',
         icon: TruckIcon,
         ref: 'trailers.index'
+    },
+    {
+        name: 'RUTAS',
+        icon: MapIcon,
+        ref: 'routes.index'
+    },
+    {
+        name: 'ORIGENES Y DESTINOS',
+        icon: MapPinIcon,
+        ref: 'origins_and_destinations.index'
     },
 ]
 </script>

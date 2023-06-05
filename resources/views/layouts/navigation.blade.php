@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('owners')" :active="request()->routeIs('owners')">
                         {{ __('Propietarios') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('routes')" :active="request()->routeIs('routes')">
+                        {{ __('Rutas') }}
+                    </x-nav-link>
                 </div>
             </div>
 
