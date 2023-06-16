@@ -1,12 +1,5 @@
 <template>
     <div class="">
-        <div class="md:flex md:items-center md:justify-between my-5 ">
-            <div class="min-w-0 flex-1">
-                <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Origenes y
-                    Destinos</h2>
-            </div>
-        </div>
-
         <form @submit.prevent="saveOriginAndDestination()" class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2 uppercase">
             <div class="px-4 py-6 sm:p-8">
                 <h2 class="my-8 text-3xl font-extrabold dark:text-white">Nuevo Origen y Destino</h2>
