@@ -28,6 +28,8 @@ return new class extends Migration
             $table->tinyInteger('withholding');
             $table->double('iva_rate');
             $table->string('ledger_account');
+            $table->string('exterior_number');
+            $table->string('interior_number');
             $table->timestamps();
         });
     }

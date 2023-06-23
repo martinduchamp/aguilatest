@@ -1,13 +1,8 @@
 <template>
     <div class="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-1">
-        <div class="px-4 sm:px-0">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Orignes y Destinos</h2>
-            <!-- <p class="mt-1 text leading-6 text-gray-600">Use a permanent address where you can receive mail.</p> -->
-        </div>
-
         <form @submit.prevent="saveOriginAndDestination()" class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2 uppercase">
             <div class="px-4 py-6 sm:p-8">
-                <h2 class="my-8 text-3xl font-extrabold dark:text-white">Nuevo Origen y Destino</h2>
+                <h2 class="my-8 text-3xl font-extrabold dark:text-white">Origen y Destino</h2>
                 <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">NOMBRE</label>
@@ -210,22 +205,9 @@ const filteredPeople = computed(() =>
 
 const { errors, updateOriginAndDestination, getOriginAndDestination, origin_and_destination } = useOriginsAndDestinations();
 
-const form = reactive({
-    'name': '',
-    'address': '',
-    'street': '',
-    'rfc': '',
-    'postal_code': '',
-    'city': '',
-    'exterior_number': '',
-    'interior_number': '',
-    'country': '',
-    'state': ''
-})
 
 
 const saveOriginAndDestination = async () => {
-    // await storeOriginAndDestination({...form});
     updateOriginAndDestination(props.id)
 }
 

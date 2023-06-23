@@ -37,6 +37,8 @@ class CustomerRequest extends FormRequest
             "withholding" => ['nullable'],
             "iva_rate" => ['nullable'],
             "ledger_account" => ['nullable'],
+            "exterior_number" => ['nullable'],
+            "interior_number" => ['nullable'],
         ];
     }
 }

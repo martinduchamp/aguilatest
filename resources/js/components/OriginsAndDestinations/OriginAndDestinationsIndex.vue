@@ -24,7 +24,7 @@
 
                         <TransitionGroup name="list" tag="table" class="min-w-full divide-y divide-gray-300">
                             <thead>
-                                <tr>
+                                <tr flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0>
                                     <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 sm:pl-0">
                                         NOMBRE
                                     </th>
@@ -42,7 +42,7 @@
                             <tbody class="divide-y divide-gray-200">
 
                                 <tr v-for="origin_and_destintion in origins_and_destinations"
-                                    :key="origin_and_destintion.id" class="transition-all">
+                                    :key="origin_and_destintion.id" class="transition-all flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                                     <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
                                         {{ origin_and_destintion.name }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 font-medium text-sm text-gray-900">{{

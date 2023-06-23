@@ -24,7 +24,9 @@ class Customer extends Model
         'payment_type',
         'withholding',
         'iva_rate',
-        'ledger_account'
+        'ledger_account',
+        'exterior_number',
+        'interior_number'
     ];
 
     public function emails() {

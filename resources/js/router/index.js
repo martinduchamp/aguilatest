@@ -20,6 +20,40 @@ import OriginsAndDestinations from "../components/OriginsAndDestinations/OriginA
 import OriginsAndDestinationsCreate from '../components/OriginsAndDestinations/OriginAndDestinationsCreate.vue';
 import OriginsAndDestinationsEdit from '../components/OriginsAndDestinations/OriginAndDestinationsEdit.vue';
 
+// CUSTOMERS
+import CustomersIndex from "../components/Customers/CustomersIndex.vue";
+import CustomersCreate from "../components/Customers/CustomersCreate.vue";
+import CustomersEdit from "../components/Customers/CustomersEdit.vue";
+
+// FENCES
+import FencesIndex from "../components/Fences/FencesIndex.vue";
+import FencesCreate from "../components/Fences/FencesCreate.vue";
+import FencesEdit from "../components/Fences/FencesEdit.vue";
+
+// VALIDITY CONCEPTS
+import ValidityConceptsIndex from "../components/ValidityConcepts/ValidityConceptsIndex.vue";
+import ValidityConceptsCreate from "../components/ValidityConcepts/ValidityConceptsCreate.vue";
+import ValidityConceptsEdit from "../components/ValidityConcepts/ValidityConceptsEdit.vue";
+
+// OPERATORS
+import OperatorsIndex from "../components/Operators/OperatorsIndex.vue";
+import OperatorsCreate from "../components/Operators/OperatorsCreate.vue";
+import OperatorsEdit from "../components/Operators/OperatorsEdit.vue";
+
+// VEHICLES
+import VehiclesIndex from "../components/Vehicles/VehicleIndex.vue";
+import VehiclesCreate from "../components/Vehicles/VehicleCreate.vue";
+import VehiclesEdit from "../components/Vehicles/VehicleEdit.vue";
+
+// FEES
+import FeesIndex from "../components/Fees/FeesIndex.vue";
+import FeesCreate from "../components/Fees/FeeCreate.vue";
+import FeesEdit from "../components/Fees/FeeEdit.vue";
+
+import AgreementsIndex from "../components/Agreements/AgreementIndex.vue";
+import AgreementsCreate from "../components/Agreements/AgreementCreate.vue";
+import AgreementsEdit from "../components/Agreements/AgreementEdit.vue";
+
 const routes = [
     // DASHBOARD
     {
@@ -32,6 +66,128 @@ const routes = [
                 path: "/catalogs",
                 name: "catalogs.index",
                 component: Catalogs,
+            },
+            // CUSTOMERS
+            {
+                path: "/customers",
+                name: "customers.index",
+                component: CustomersIndex
+            },
+            {
+                path: "/customers",
+                name: "customers.create",
+                component: CustomersCreate
+            },
+            {
+                path: "/customers/:id/edit",
+                name: "customers.edit",
+                component: CustomersEdit,
+                props: true,
+            },
+
+            // AGREEMENTS
+            {
+                path: "/agreements",
+                name: "agreements.index",
+                component: AgreementsIndex
+            },
+            {
+                path: "/agreements",
+                name: "agreements.create",
+                component: AgreementsCreate
+            },
+            {
+                path: "/agreements/:id/edit",
+                name: "agreements.edit",
+                component: AgreementsEdit,
+                props: true,
+            },
+
+            // OPERATORS
+            {
+                path: "/operators",
+                name: "operators.index",
+                component: OperatorsIndex
+            },
+            {
+                path: "/operators",
+                name: "operators.create",
+                component: OperatorsCreate
+            },
+            {
+                path: "/operators/:id/edit",
+                name: "operators.edit",
+                component: OperatorsEdit,
+                props: true,
+            },
+
+             // FEES
+             {
+                path: "/fees",
+                name: "fees.index",
+                component: FeesIndex
+            },
+            {
+                path: "/fees",
+                name: "fees.create",
+                component: FeesCreate
+            },
+            {
+                path: "/fees/:id/edit",
+                name: "fees.edit",
+                component: FeesEdit,
+                props: true,
+            },
+            // VEHICLES
+            {
+                path: "/vehicles",
+                name: "vehicles.index",
+                component: VehiclesIndex
+            },
+            {
+                path: "/vehicles",
+                name: "vehicles.create",
+                component: VehiclesCreate
+            },
+            {
+                path: "/vehicles/:id/edit",
+                name: "vehicles.edit",
+                component: VehiclesEdit,
+                props: true,
+            },
+            // VALIDITY CONCEPTS
+            {
+                path: "/validity_concepts",
+                name: "validity_concepts.index",
+                component: ValidityConceptsIndex
+            },
+            {
+                path: "/validity_concepts",
+                name: "validity_concepts.create",
+                component: ValidityConceptsCreate
+            },
+            {
+                path: "/validity_concepts/:id/edit",
+                name: "validity_concepts.edit",
+                component: ValidityConceptsEdit,
+                props: true,
+            },
+            // FENCES
+            {
+                path: "/fences",
+                name: "fences.index",
+                component: FencesIndex
+            },
+            {
+                path: "/fences",
+                name: "fences.create",
+                component: FencesCreate
+            },
+            {
+                path: "/fences/:id/edit",
+                name: "fences.edit",
+                component: FencesEdit,
+                props: true,
             },
             // OWNERS
             {

@@ -204,13 +204,16 @@
     HomeIcon,
     UsersIcon,
     XMarkIcon,
-    RectangleStackIcon
+    RectangleStackIcon,
+    DocumentTextIcon
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   
   const navigation = [
-    { name: 'Catalogos', href: 'catalogs.index', icon: RectangleStackIcon, current: true },
+  { name: 'Convenios', href: 'agreements.index', icon: DocumentTextIcon, current: true },
+    { name: 'Catalogos', href: 'catalogs.index', icon: RectangleStackIcon, current: false },
     { name: 'Propietarios', href: 'owners.index', icon: UsersIcon, current: false },
+    
   ]
   const teams = [
     { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
