@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="my-8 text-5xl font-extrabold dark:text-white">Insertar un nuevo tipo de remolque</h1>
+        <h1 class="my-8 text-5xl font-extrabold dark:text-white">Editar Ruta</h1>
 
         <form @submit.prevent="saveRoute()" class="w-full max-w-lg ">
             <div class="flex flex-wrap -mx-3 mb-6">
