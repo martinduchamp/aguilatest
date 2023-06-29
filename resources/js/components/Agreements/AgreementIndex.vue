@@ -35,6 +35,14 @@
                                     <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 dark:text-white sm:pl-0">
                                         TIPO DE MOVIMIENTO
                                     </th>
+
+                                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 dark:text-white sm:pl-0">
+                                        REMITENTE
+                                    </th>
+
+                                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 dark:text-white sm:pl-0">
+                                        DESTINATARIO
+                                    </th>
                                     
                                     <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
                                         <span class="sr-only">Editar</span>
@@ -53,6 +61,12 @@
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
                                         {{ fee.type }}</td>
+
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
+                                        {{ fee.sender.name }}</td>
+
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
+                                        {{ fee.receiver.name }}</td>
                                    
                                     <td
                                         class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
