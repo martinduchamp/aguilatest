@@ -9,7 +9,7 @@ class Agreement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'owner_id', 
+        'customer_id', 
         'sender_origin_and_destinations_id',
         'receiver_origin_and_destinations_id',
         'sender_fence_id', 
@@ -30,13 +30,21 @@ class Agreement extends Model
         return $this->hasMany(AgreementFee::class);
     }
 
-    protected $with = ['owner'];
+    protected $with = ['customer', 'sender', 'receiver'];
 
-    public function owner() {
-        return $this->belongsTo(Owner::class);
+    public function customer() {
+        return $this->belongsTo(Customer::class);
     }
 
     public function route() {
         return $this->belongsTo(Route::class);
+    }
+
+    public function sender() {
+        return $this->belongsTo(OriginDestination::class, 'sender_origin_and_destinations_id');
+    }
+
+    public function receiver() {
+        return $this->belongsTo(OriginDestination::class, 'receiver_origin_and_destinations_id');
     }
 }

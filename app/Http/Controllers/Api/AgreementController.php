@@ -24,6 +24,7 @@ class AgreementController extends Controller
      */
     public function store(AgreementRequest $request)
     {
+        //return $request;
         $agreement = Agreement::create($request->validated());   
         return new AgreementResource($agreement);
     }

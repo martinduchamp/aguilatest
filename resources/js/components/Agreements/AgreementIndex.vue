@@ -29,7 +29,7 @@
                                     </th>
 
                                     <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 dark:text-white sm:pl-0">
-                                        PROPIETARIO
+                                        CLIENTE
                                     </th>
 
                                     <th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 dark:text-white sm:pl-0">
@@ -49,7 +49,7 @@
                                         {{ fee.id }}</td>
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
-                                        {{ fee.owner.name }}</td>
+                                        {{ fee.customer.name }}</td>
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm  font-medium text-gray-900 sm:pl-0">
                                         {{ fee.type }}</td>

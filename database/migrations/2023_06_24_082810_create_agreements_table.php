@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('agreements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('owner_id');
+            $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('sender_origin_and_destinations_id');
             $table->unsignedBigInteger('receiver_origin_and_destinations_id');
             $table->unsignedBigInteger('sender_fence_id');
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('currency', 10);
             $table->unsignedBigInteger('route_id');
 
-            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->foreign('sender_origin_and_destinations_id')->references('id')->on('origin_destinations')->onDelete('cascade');
             $table->foreign('sender_fence_id')->references('id')->on('fences')->onDelete('cascade');
             $table->foreign('receiver_fence_id')->references('id')->on('fences')->onDelete('cascade');

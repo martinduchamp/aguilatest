@@ -22,7 +22,7 @@ class AgreementRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'owner_id' => ['required'],
+            'customer_id' => ['required'],
             'sender_origin_and_destinations_id' => ['required'],
             'receiver_origin_and_destinations_id' => ['required'],
             'sender_fence_id' => ['required'],
