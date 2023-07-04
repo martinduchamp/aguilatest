@@ -2,7 +2,7 @@
     <div class="">
         <form @submit.prevent="saveAgreement()" class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded  uppercase">
             <div class="px-4 py-6 sm:p-8">
-                <h2 class="my-8 text-3xl font-extrabold dark:text-white">Nuevo Convenio</h2>
+                <h2 class="my-8 text-3xl font-extrabold dark:text-white">Editar Convenio</h2>
                 <div class="grid  grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
 
@@ -10,7 +10,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">CLIENTE</label>
                         <div class="mt-2">
-                            <select required id="currency" name="currency" autocomplete="currency" v-model="customer"
+                            <select  id="currency" name="currency" autocomplete="currency" v-model="customer"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option :selected="customer.id === Agreement.customer_id" v-for="customer in customers" :key="customer" :value="customer">{{ customer.name }}</option>
                             </select>
@@ -22,7 +22,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">REMITENTE</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency" v-model="sender"
+                            <select  id="origin" name="currency" autocomplete="currency" v-model="sender"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option v-for="sender in origins_and_destinations" :value="sender">{{ sender.name }}
                                 </option>
@@ -32,7 +32,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">DIRECCIÓN</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input @input="(val) => (sender.address = sender.address.toUpperCase())" required
+                                <input @input="(val) => (sender.address = sender.address.toUpperCase())" 
                                     v-model="sender.address" type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -42,7 +42,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">CALLE</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input @input="(val) => (sender.street = sender.street.toUpperCase())" required
+                                <input @input="(val) => (sender.street = sender.street.toUpperCase())" 
                                     v-model="sender.street" type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -55,7 +55,7 @@
                                     EXT</label>
                                 <div class="mt-2">
                                     <input @input="(val) => (sender.exterior_number = sender.exterior_number.toUpperCase())"
-                                        required v-model="sender.exterior_number" type="number" name="first-name"
+                                         v-model="sender.exterior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -66,7 +66,7 @@
                                     INT</label>
                                 <div class="mt-2">
                                     <input @input="(val) => (sender.interior_number = sender.interior_number.toUpperCase())"
-                                        required v-model="sender.interior_number" type="number" name="first-name"
+                                         v-model="sender.interior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -75,7 +75,7 @@
                             <div class="sm:col-span-2">
                                 <label for="first-name" class="block text font-medium leading-6 text-gray-900">PAIS</label>
                                 <div class="mt-2">
-                                    <input @input="(val) => (sender.country = Agreementdesenlone.toUpperCase())" required
+                                    <input @input="(val) => (sender.country = Agreementdesenlone.toUpperCase())" 
                                         v-model="sender.country" type="text" name="first-name" id="desenlone"
                                         autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -86,7 +86,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">CIUDAD</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input :value="sender.city" required type="text" name="sender_address" id="sender_address"
+                                <input :value="sender.city"  type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
@@ -97,7 +97,7 @@
                                 <label for="first-name" class="block text font-medium leading-6 text-gray-900">C.P.</label>
                                 <div class="mt-2">
                                     <input @input="(val) => (sender.postal_code = sender.postal_code.toUpperCase())"
-                                        required v-model="sender.postal_code" type="number" name="first-name" id="desenlone"
+                                         v-model="sender.postal_code" type="number" name="first-name" id="desenlone"
                                         autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -108,7 +108,7 @@
                                     class="block text font-medium leading-6 text-gray-900">TELEFONO</label>
                                 <div class="mt-2">
                                     <input @input="(val) => (sender.interior_number = sender.interior_number.toUpperCase())"
-                                        required v-model="sender.interior_number" type="number" name="first-name"
+                                         v-model="sender.interior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -118,7 +118,7 @@
                                 <label for="first-name"
                                     class="block text font-medium leading-6 text-gray-900">ESTADO</label>
                                 <div class="mt-2">
-                                    <input @input="(val) => (sender.state = sender.state.toUpperCase())" required
+                                    <input @input="(val) => (sender.state = sender.state.toUpperCase())" 
                                         v-model="sender.state" type="text" name="first-name" id="desenlone"
                                         autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -132,7 +132,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">DESTINATARIO</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency" v-model="receiver"
+                            <select  id="origin" name="currency" autocomplete="currency" v-model="receiver"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option v-for="origin in origins_and_destinations" :value="origin">{{ origin.name }}
                                 </option>
@@ -142,7 +142,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">DIRECCIÓN</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input @input="(val) => (receiver.address = receiver.address.toUpperCase())" required
+                                <input @input="(val) => (receiver.address = receiver.address.toUpperCase())" 
                                     v-model="receiver.address" type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -152,7 +152,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">CALLE</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input @input="(val) => (receiver.street = receiver.street.toUpperCase())" required
+                                <input @input="(val) => (receiver.street = receiver.street.toUpperCase())" 
                                     v-model="receiver.street" type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -166,7 +166,7 @@
                                 <div class="mt-2">
                                     <input
                                         @input="(val) => (receiver.exterior_number = receiver.exterior_number.toUpperCase())"
-                                        required v-model="receiver.exterior_number" type="number" name="first-name"
+                                         v-model="receiver.exterior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -178,7 +178,7 @@
                                 <div class="mt-2">
                                     <input
                                         @input="(val) => (receiver.interior_number = receiver.interior_number.toUpperCase())"
-                                        required v-model="receiver.interior_number" type="number" name="first-name"
+                                         v-model="receiver.interior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -187,7 +187,7 @@
                             <div class="sm:col-span-2">
                                 <label for="first-name" class="block text font-medium leading-6 text-gray-900">PAIS</label>
                                 <div class="mt-2">
-                                    <input @input="(val) => (receiver.country = Agreement.desenlone.toUpperCase())" required
+                                    <input @input="(val) => (receiver.country = Agreement.desenlone.toUpperCase())" 
                                         v-model="receiver.country" type="text" name="first-name" id="desenlone"
                                         autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -198,7 +198,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900 mt-4">CIUDAD</label>
                         <div class="mt-2">
                             <div class="mt-2">
-                                <input :value="receiver.city" required type="text" name="sender_address" id="sender_address"
+                                <input :value="receiver.city"  type="text" name="sender_address" id="sender_address"
                                     autocomplete="given-name" disabled
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
@@ -209,7 +209,7 @@
                                 <label for="first-name" class="block text font-medium leading-6 text-gray-900">C.P.</label>
                                 <div class="mt-2">
                                     <input @input="(val) => (receiver.postal_code = receiver.postal_code.toUpperCase())"
-                                        required v-model="receiver.postal_code" type="number" name="first-name"
+                                         v-model="receiver.postal_code" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -221,7 +221,7 @@
                                 <div class="mt-2">
                                     <input
                                         @input="(val) => (receiver.interior_number = receiver.interior_number.toUpperCase())"
-                                        required v-model="receiver.interior_number" type="number" name="first-name"
+                                         v-model="receiver.interior_number" type="number" name="first-name"
                                         id="desenlone" autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -231,7 +231,7 @@
                                 <label for="first-name"
                                     class="block text font-medium leading-6 text-gray-900">ESTADO</label>
                                 <div class="mt-2">
-                                    <input @input="(val) => (receiver.state = receiver.state.toUpperCase())" required
+                                    <input @input="(val) => (receiver.state = receiver.state.toUpperCase())" 
                                         v-model="receiver.state" type="text" name="first-name" id="desenlone"
                                         autocomplete="given-name" disabled
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -246,7 +246,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">PLANTA ORIGEN</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency"
+                            <select  id="origin" name="currency" autocomplete="currency"
                                 v-model="Agreement.sender_fence_id"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option v-for="origin in fences" :value="origin.id">{{ origin.name }}
@@ -260,7 +260,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">PLANTA DESTINO</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency"
+                            <select  id="origin" name="currency" autocomplete="currency"
                                 v-model="Agreement.receiver_fence_id"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option v-for="origin in fences" :value="origin.id">{{ origin.name }}
@@ -275,7 +275,7 @@
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">TIPO DE
                             MOVIMIENTO</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency" v-model="Agreement.type"
+                            <select  id="origin" name="currency" autocomplete="currency" v-model="Agreement.type"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option>
                                     IMPORTACION
@@ -292,7 +292,7 @@
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">SUELDO DE
                             IMPORTACION</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.import_salary = Agreement.import_salary.toUpperCase())" required
+                            <input @input="(val) => (Agreement.import_salary = Agreement.import_salary.toUpperCase())" 
                                 v-model="Agreement.import_salary" type="number" name="first-name" id="import_salary"
                                 autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -302,7 +302,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">DESENLONE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.desenlone = Agreement.desenlone.toUpperCase())" required
+                            <input @input="(val) => (Agreement.desenlone = Agreement.desenlone.toUpperCase())" 
                                 v-model="Agreement.desenlone" type="number" name="first-name" id="desenlone"
                                 autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -312,7 +312,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">DESAMARRE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.desamarre = Agreement.desamarre.toUpperCase())" required
+                            <input @input="(val) => (Agreement.desamarre = Agreement.desamarre.toUpperCase())" 
                                 v-model="Agreement.desamarre" type="number" name="desamarre" id="desenlone"
                                 autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -322,7 +322,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">BONO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.voucher = Agreement.voucher.toUpperCase())" required
+                            <input @input="(val) => (Agreement.voucher = Agreement.voucher.toUpperCase())" 
                                 v-model="Agreement.voucher" type="number" name="desamarre" id="desenlone"
                                 autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
@@ -332,7 +332,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">POR CARGAR</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.to_load = Agreement.to_load.toUpperCase())" required
+                            <input @input="(val) => (Agreement.to_load = Agreement.to_load.toUpperCase())" 
                                 v-model="Agreement.to_load" type="number" name="desamarre" id="to_load" autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
@@ -341,7 +341,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">AMARRE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.amarre = Agreement.amarre.toUpperCase())" required
+                            <input @input="(val) => (Agreement.amarre = Agreement.amarre.toUpperCase())" 
                                 v-model="Agreement.amarre" type="number" name="desamarre" id="amarre" autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
@@ -350,7 +350,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">ENLONE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (Agreement.enlone = Agreement.enlone.toUpperCase())" required
+                            <input @input="(val) => (Agreement.enlone = Agreement.enlone.toUpperCase())" 
                                 v-model="Agreement.enlone" type="number" name="desamarre" id="enlone" autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
@@ -360,7 +360,7 @@
                     <div class="sm:col-span-3 ">
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">MONEDA</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency" v-model="customer.currency"
+                            <select  id="origin" name="currency" autocomplete="currency" v-model="customer.currency"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option>
                                     DOLARES
@@ -377,7 +377,7 @@
 
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">RUTA</label>
                         <div class="mt-2">
-                            <select required id="origin" name="currency" autocomplete="currency" v-model="Agreement.route_id"
+                            <select  id="origin" name="currency" autocomplete="currency" v-model="Agreement.route_id"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 <option v-for="route in routes" :value="route.id">{{ route.name }}
                                 </option>

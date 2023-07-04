@@ -7,7 +7,7 @@
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">NOMBRE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.name = origin_and_destination.name.toUpperCase())" required v-model="origin_and_destination.name"
+                            <input @input="(val) => (origin_and_destination.name = origin_and_destination.name.toUpperCase())"  v-model="origin_and_destination.name"
                                 type="text" name="first-name" id="first-name" autocomplete="given-name"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -16,7 +16,7 @@
                     <div class="col-span-full">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">DIRECCIÓN</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.address = origin_and_destination.address.toUpperCase())" required
+                            <input @input="(val) => (origin_and_destination.address = origin_and_destination.address.toUpperCase())" 
                                 v-model="origin_and_destination.address" type="text" name="street-address" id="street-address"
                                 autocomplete="street-address"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -26,7 +26,7 @@
                     <div class="col-span-full">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">CALLE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.street = origin_and_destination.street.toUpperCase())" required
+                            <input @input="(val) => (origin_and_destination.street = origin_and_destination.street.toUpperCase())" 
                                 v-model="origin_and_destination.street" type="text" name="street-address" id="street-address"
                                 autocomplete="street-address"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -36,7 +36,7 @@
                     <div class="col-span-full">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">RFC</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.rfc = origin_and_destination.rfc.toUpperCase())" required v-model="origin_and_destination.rfc"
+                            <input @input="(val) => (origin_and_destination.rfc = origin_and_destination.rfc.toUpperCase())"  v-model="origin_and_destination.rfc"
                                 type="text" name="street-address" id="street-address" autocomplete="street-address"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -45,7 +45,7 @@
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="city" class="block text font-medium leading-6 text-gray-900">NO. EXTERIOR</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.exterior_number = origin_and_destination.exterior_number.toUpperCase())" required
+                            <input @input="(val) => (origin_and_destination.exterior_number = origin_and_destination.exterior_number.toUpperCase())" 
                                 v-model="origin_and_destination.exterior_number" type="number" name="city" id="city"
                                 autocomplete="address-level2"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -55,7 +55,7 @@
                     <div class="sm:col-span-2">
                         <label for="region" class="block text font-medium leading-6 text-gray-900">NO. INTERIOR</label>
                         <div class="mt-2">
-                            <input required v-model.number="origin_and_destination.interior_number" type="number" name="region" id="region"
+                            <input  v-model.number="origin_and_destination.interior_number" type="number" name="region" id="region"
                                 autocomplete="address-level1"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -64,7 +64,7 @@
                     <div class="sm:col-span-4">
                         <label for="country" class="block text font-medium leading-6 text-gray-900">PAÍS </label>
                         <div class="mt-2">
-                            <select required id="country" name="country" autocomplete="country-name" v-model="origin_and_destination.country"
+                            <select  id="country" name="country" autocomplete="country-name" v-model="origin_and_destination.country"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text sm:leading-6">
                                 <option>USA</option>
                                 <option>CANADA</option>
@@ -76,7 +76,7 @@
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="city" class="block text font-medium leading-6 text-gray-900">CIUDAD</label>
                         <div class="mt-2">
-                            <input @input="(val) => (origin_and_destination.city = origin_and_destination.city.toUpperCase())" required v-model="origin_and_destination.city"
+                            <input @input="(val) => (origin_and_destination.city = origin_and_destination.city.toUpperCase())"  v-model="origin_and_destination.city"
                                 type="text" name="city" id="city" autocomplete="address-level2"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -85,13 +85,13 @@
                     <div class="sm:col-span-2">
                         <label for="region" class="block text font-medium leading-6 text-gray-900">ESTADO</label>
                         <div class="mt-2">
-                            <Combobox required as="div" v-model="origin_and_destination.state">
+                            <Combobox  as="div" v-model="origin_and_destination.state">
 
                                 <div class="relative mt-2">
-                                    <ComboboxInput required
+                                    <ComboboxInput 
                                         class="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6"
                                         @change="query = $event.target.value" :display-value="(person) => person" />
-                                    <ComboboxButton required
+                                    <ComboboxButton 
                                         class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
                                         <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
                                     </ComboboxButton>

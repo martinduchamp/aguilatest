@@ -9,7 +9,7 @@
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">NUMERO DE VEHICULO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.vehicle_number = form.vehicle_number.toUpperCase())" required v-model="form.vehicle_number"
+                            <input @input="(val) => (form.vehicle_number = form.vehicle_number.toUpperCase())"  v-model="form.vehicle_number"
                                 type="text" name="first-name" id="vehicle-number" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -18,7 +18,7 @@
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="country" class="block text font-medium leading-6 text-gray-900">TIPO </label>
                         <div class="mt-2">
-                            <select required id="country" name="country" autocomplete="country-name" v-model="form.type"
+                            <select  id="country" name="country" autocomplete="country-name" v-model="form.type"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text sm:leading-6">
                                 <option>CARRETERA</option>
                             </select>
@@ -28,7 +28,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">PLACAS</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.plates = form.plates.toUpperCase())" required v-model="form.plates"
+                            <input @input="(val) => (form.plates = form.plates.toUpperCase())"  v-model="form.plates"
                                 type="text" name="first-name" id="plates" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -37,7 +37,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">MARCA</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.brand = form.brand.toUpperCase())" required v-model="form.brand"
+                            <input @input="(val) => (form.brand = form.brand.toUpperCase())"  v-model="form.brand"
                                 type="text" name="first-name" id="brand" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -46,7 +46,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">VIN</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.vin = form.vin.toUpperCase())" required v-model="form.vin"
+                            <input @input="(val) => (form.vin = form.vin.toUpperCase())"  v-model="form.vin"
                                 type="text" name="first-name" id="vin" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -55,7 +55,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">MODELO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.model = form.model.toUpperCase())" required v-model="form.model"
+                            <input @input="(val) => (form.model = form.model.toUpperCase())"  v-model="form.model"
                                 type="text" name="first-name" id="model" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -64,7 +64,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">RENDIMIENTO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.performance = form.performance.toUpperCase())" required v-model="form.performance"
+                            <input @input="(val) => (form.performance = form.performance.toUpperCase())"  v-model="form.performance"
                                 type="number" name="first-name" id="performance" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -73,7 +73,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">COLOR</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.color = form.color.toUpperCase())" required v-model="form.color"
+                            <input @input="(val) => (form.color = form.color.toUpperCase())"  v-model="form.color"
                                 type="text" name="first-name" id="color" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -97,7 +97,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">EXCELCO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.excelco = form.excelco.toUpperCase())" required v-model="form.excelco"
+                            <input @input="(val) => (form.excelco = form.excelco.toUpperCase())"  v-model="form.excelco"
                                 type="text" name="first-name" id="excelco" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -106,7 +106,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">EXCELCO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.energex = form.energex.toUpperCase())" required v-model="form.energex"
+                            <input @input="(val) => (form.energex = form.energex.toUpperCase())"  v-model="form.energex"
                                 type="text" name="first-name" id="energex" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -115,7 +115,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">GPS ID</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.gps_id = form.gps_id.toUpperCase())" required v-model="form.gps_id"
+                            <input @input="(val) => (form.gps_id = form.gps_id.toUpperCase())"  v-model="form.gps_id"
                                 type="text" name="first-name" id="gps-id" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -124,7 +124,7 @@
                     <div class="sm:col-span-2">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">POLIZA</label>
                         <div class="mt-2">
-                            <input @input="(val) => (form.policy = form.policy.toUpperCase())" required v-model="form.policy"
+                            <input @input="(val) => (form.policy = form.policy.toUpperCase())"  v-model="form.policy"
                                 type="text" name="first-name" id="policy" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>

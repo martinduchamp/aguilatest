@@ -9,7 +9,7 @@
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">NOMBRE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.name = customer.name.toUpperCase())" required v-model="customer.name"
+                            <input @input="(val) => (customer.name = customer.name.toUpperCase())"  v-model="customer.name"
                                 type="text" name="first-name" id="first-name" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -18,7 +18,7 @@
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">RFC</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.rfc = customer.rfc.toUpperCase())" required v-model="customer.rfc"
+                            <input @input="(val) => (customer.rfc = customer.rfc.toUpperCase())"  v-model="customer.rfc"
                                 type="text" name="first-name" id="first-name" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -27,7 +27,7 @@
                     <div class="col-span-full">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">DIRECCIÓN</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.address = customer.address.toUpperCase())" required
+                            <input @input="(val) => (customer.address = customer.address.toUpperCase())" 
                                 v-model="customer.address" type="text" name="street-address" id="street-address"
                                 autocomplete="street-address"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -37,7 +37,7 @@
                     <div class="sm:col-span-3 sm:col-start-1">
                         <label for="city" class="block text font-medium leading-6 text-gray-900">NO. EXTERIOR</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.exterior_number = customer.exterior_number)" required
+                            <input @input="(val) => (customer.exterior_number = customer.exterior_number)" 
                                 v-model="customer.exterior_number" type="number" name="city" id="city"
                                 autocomplete="address-level2"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -47,7 +47,7 @@
                     <div class="sm:col-span-3">
                         <label for="region" class="block text font-medium leading-6 text-gray-900">NO. INTERIOR</label>
                         <div class="mt-2">
-                            <input required v-model.number="customer.interior_number" type="number" name="region" id="region"
+                            <input  v-model.number="customer.interior_number" type="number" name="region" id="region"
                                 autocomplete="address-level1"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -56,7 +56,7 @@
                     <div class="sm:col-span-3 sm:col-start-1">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">COLONIA</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.address = customer.area.toUpperCase())" required v-model="customer.area"
+                            <input @input="(val) => (customer.address = customer.area.toUpperCase())"  v-model="customer.area"
                                 type="text" name="street-address" id="street-address" autocomplete="street-address"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -78,7 +78,7 @@
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="country" class="block text font-medium leading-6 text-gray-900">PAÍS </label>
                         <div class="mt-2">
-                            <select required id="country" name="country" autocomplete="country-name" v-model="customer.country"
+                            <select  id="country" name="country" autocomplete="country-name" v-model="customer.country"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text sm:leading-6">
                                 <option>USA</option>
                                 <option>CANADA</option>
@@ -90,7 +90,7 @@
                     <div class="sm:col-span-2 ">
                         <label for="city" class="block text font-medium leading-6 text-gray-900">CIUDAD</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.city = customer.city.toUpperCase())" required v-model="customer.city"
+                            <input @input="(val) => (customer.city = customer.city.toUpperCase())"  v-model="customer.city"
                                 type="text" name="city" id="city" autocomplete="address-level2"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
@@ -99,13 +99,13 @@
                     <div class="sm:col-span-2">
                         <label for="region" class="block text font-medium leading-6 text-gray-900">ESTADO</label>
                         <div class="mt-2">
-                            <Combobox required as="div" v-model="customer.state">
+                            <Combobox  as="div" v-model="customer.state">
 
                                 <div class="relative mt-2">
-                                    <ComboboxInput required
+                                    <ComboboxInput 
                                         class="w-full rounded border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6"
                                         @change="query = $event.target.value" :display-value="(person) => person" />
-                                    <ComboboxButton required
+                                    <ComboboxButton 
                                         class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
                                         <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
                                     </ComboboxButton>
@@ -136,7 +136,7 @@
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">CUENTA DE
                             BANCO</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.bank_account = customer.bank_account.toUpperCase())" required
+                            <input @input="(val) => (customer.bank_account = customer.bank_account.toUpperCase())" 
                                 v-model="customer.bank_account" type="text" name="first-name" id="first-name"
                                 autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -146,7 +146,7 @@
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">MONEDA</label>
                         <div class="mt-2">
-                            <select required id="currency" name="currency" autocomplete="currency" v-model="customer.currency"
+                            <select  id="currency" name="currency" autocomplete="currency" v-model="customer.currency"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text sm:leading-6">
                                 <option>PESOS</option>
                                 <option>DOLARES</option>
@@ -158,7 +158,7 @@
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">REGIMEN
                             FISCAL</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.tax_regime = customer.tax_regime.toUpperCase())" required
+                            <input @input="(val) => (customer.tax_regime = customer.tax_regime.toUpperCase())" 
                                 v-model="customer.tax_regime" type="text" name="first-name" id="first-name"
                                 autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -183,7 +183,7 @@
                     <div class="sm:col-span-2 ">
                         <label for="currency" class="block text font-medium leading-6 text-gray-900">TIPO DE PAGO</label>
                         <div class="mt-2">
-                            <select required id="currency" name="currency" autocomplete="currency"
+                            <select  id="currency" name="currency" autocomplete="currency"
                                 v-model="customer.payment_type"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text sm:leading-6">
                                 <option>TRANSFERENCIA</option>
@@ -195,7 +195,7 @@
                     <div class="sm:col-span-2">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">TASA I.V.A</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.iva_rate = customer.iva_rate.toUpperCase())" required
+                            <input @input="(val) => (customer.iva_rate = customer.iva_rate.toUpperCase())" 
                                 v-model="customer.iva_rate" type="text" name="street-address" id="street-address"
                                 autocomplete="street-address"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
@@ -205,7 +205,7 @@
                     <div class="sm:col-span-6">
                         <label for="street-address" class="block text font-medium leading-6 text-gray-900">CUENTA CONTABLE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (customer.ledger_account = customer.ledger_account.toUpperCase())" required
+                            <input @input="(val) => (customer.ledger_account = customer.ledger_account.toUpperCase())" 
                                 v-model="customer.ledger_account" type="text" name="street-address" id="street-address"
                                 autocomplete="street-address"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />

@@ -9,7 +9,7 @@
                         <label for="owner-name" class="block text-sm font-medium leading-6 text-gray-900">NOMBRE DE
                             PROPIETARIO</label>
                         <div class="mt-2">
-                            <input v-uppercase v-model="form.name" type="text" name="owner-name" id="owner-name"
+                            <input v-uppercase v-model="form.name" type="text" name="owner-name" id="owner-name" required
                                 autocomplete="owner-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>

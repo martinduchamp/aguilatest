@@ -19,7 +19,7 @@
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                         KILOMETROS
                     </label>
-                    <input v-model="route.kilometres" required
+                    <input v-model="route.kilometres" 
                         class="uppercase appearance-none block w-full bg-gray-100 text-black border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="grid-first-name" type="text" placeholder="Kilometros">
                     <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->

@@ -9,7 +9,7 @@
                     <div class="sm:col-span-6">
                         <label for="first-name" class="block text font-medium leading-6 text-gray-900">NOMBRE</label>
                         <div class="mt-2">
-                            <input @input="(val) => (operator.name = operator.name.toUpperCase())" required v-model="operator.name"
+                            <input @input="(val) => (operator.name = operator.name.toUpperCase())"  v-model="operator.name"
                                 type="text" name="first-name" id="first-name" autocomplete="given-name"
                                 class="block w-full rounded border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text sm:leading-6" />
                         </div>
