@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AgreementRequest;
 use App\Http\Resources\AgreementResource;
 use App\Models\Agreement;
+use App\Models\AgreementFee;
 use Illuminate\Http\Request;
 
 class AgreementController extends Controller
@@ -25,7 +26,21 @@ class AgreementController extends Controller
     public function store(AgreementRequest $request)
     {
         //return $request;
-        $agreement = Agreement::create($request->validated());   
+        $agreement = Agreement::create($request->validated());  
+        
+        $fees = $request->agreementfees;
+        $feeid = [];
+        foreach ($fees as &$value) {
+            $feeid[] = [
+                'agreement_id' => $agreement->id,
+                'fee_id' => $value['fee']['id'],
+                'amount' => $value['ammount'],
+                'retention' => $value['retention']
+            ];
+        }
+
+        AgreementFee::insert($feeid);
+
         return new AgreementResource($agreement);
     }
 
@@ -43,6 +58,20 @@ class AgreementController extends Controller
     public function update(AgreementRequest $request, Agreement $agreement)
     {
         $agreement->update($request->validated());
+        
+        $fees = $request->agreementfees;
+        $feeid = [];
+        foreach ($fees as &$value) {
+            $feeid[] = [
+                'agreement_id' => $agreement->id,
+                'fee_id' => $value['fee']['id'],
+                'amount' => $value['ammount'],
+                'retention' => $value['retention']
+            ];
+        }
+
+        $agreement->fees()->sync($feeid);
+
         return new AgreementResource($agreement);
     }
 

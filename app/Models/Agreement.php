@@ -26,11 +26,12 @@ class Agreement extends Model
         'route_id'
     ];
 
+
     public function fees() {
         return $this->hasMany(AgreementFee::class);
     }
 
-    protected $with = ['customer', 'sender', 'receiver'];
+    protected $with = ['customer', 'sender', 'receiver', 'fees'];
 
     public function customer() {
         return $this->belongsTo(Customer::class);

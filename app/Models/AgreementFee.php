@@ -16,8 +16,9 @@ class AgreementFee extends Model
         'retention'
     ];
 
+    protected $with = ['fee'];
     public function fee()
     {
-        return $this->hasOne(Fee::class);
+        return $this->hasOne(Fee::class, 'id', 'fee_id');
     }
 }
