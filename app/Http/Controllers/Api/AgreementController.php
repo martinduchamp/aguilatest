@@ -59,13 +59,13 @@ class AgreementController extends Controller
     {
         $agreement->update($request->validated());
         
-        $fees = $request->agreementfees;
+        $fees = $request->fees;
         $feeid = [];
         foreach ($fees as &$value) {
             $feeid[] = [
                 'agreement_id' => $agreement->id,
-                'fee_id' => $value['fee']['id'],
-                'amount' => $value['ammount'],
+                'fee_id' => $value['fee'],
+                'amount' => $value['amount'],
                 'retention' => $value['retention']
             ];
         }

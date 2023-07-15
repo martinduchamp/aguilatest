@@ -28,7 +28,7 @@ class Agreement extends Model
 
 
     public function fees() {
-        return $this->hasMany(AgreementFee::class);
+        return $this->belongsToMany(Fee::class, 'agreement_fees')->withPivot('amount', 'retention');
     }
 
     protected $with = ['customer', 'sender', 'receiver', 'fees'];

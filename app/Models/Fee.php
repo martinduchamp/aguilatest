@@ -11,4 +11,7 @@ class Fee extends Model
     protected $fillable = ['concept'];
 
 
+    public function agreement() {
+        return $this->belongsToMany(AgreementFee::class);
+    }
 }

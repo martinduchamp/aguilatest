@@ -21,4 +21,14 @@ class AgreementFee extends Model
     {
         return $this->hasOne(Fee::class, 'id', 'fee_id');
     }
+
+    public function fees()
+    {
+        return $this->belongsToMany(Fee::class, 'id', 'fee_id');
+    }
+
+    public function agreements()
+    {
+        return $this->belongsTo(Agreement::class, 'id', 'agreement_id');
+    }
 }

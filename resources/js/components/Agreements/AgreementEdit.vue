@@ -422,14 +422,17 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white">
-                                    <tr v-for="(mfee, index) in agreementFeeList" :key="mfee.fee.id" class="divide-x divide-gray-200">
+                                    <tr v-for="(mfee, index) in Agreement.fees" :key="mfee.id"
+                                        class="divide-x divide-gray-200">
                                         <td
                                             class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-0">
-                                            {{ mfee.fee.concept }}</td>
-                                        <td class="whitespace-nowrap p-4 text-sm text-gray-500">{{ mfee.ammount }}</td>
-                                        <td class="whitespace-nowrap p-4 text-sm text-gray-500">{{ mfee.retention }}</td>
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm text-gray-500 sm:pr-0"><button  @click="deletecFee(index)"
-                                            class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</button></td>
+                                            {{ mfee.concept }}</td>
+                                        <td class="whitespace-nowrap p-4 text-sm text-gray-500">{{ mfee.pivot.amount }}</td>
+                                        <td class="whitespace-nowrap p-4 text-sm text-gray-500">{{ mfee.pivot.retention }}</td>
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm text-gray-500 sm:pr-0"><button
+                                                @click="deletecFee(index)"
+                                                class="font-medium text-red-600 dark:text-red-500 hover:underline">ELIMINAR</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -485,7 +488,7 @@
                                                             <select id="currency" name="currency" autocomplete="currency"
                                                                 v-model="fee"
                                                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                                <option v-for="mfee in fees" :value="mfee">{{ mfee.concept
+                                                                <option v-for="mfee in Agreement.fees" :value="mfee">{{ mfee.concept
                                                                 }}
                                                                 </option>
                                                             </select>
@@ -539,7 +542,7 @@
     </TransitionRoot>
 </template>
 <script setup>
-import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue'
+import { Switch, SwitchGroup, SwitchLabel, Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { reactive, watch } from 'vue';
 import useAgreements from '../../composables/agreements.js';
 import useOriginsAndDestinations from '../../composables/originDestinations';
@@ -547,6 +550,7 @@ import useRoutes from '../../composables/routes.js';
 import useOwners from '../../composables/owners.js';
 import useCustomers from '../../composables/customers.js'
 import useFences from '../../composables/fences.js'
+import useFees from '../../composables/fees.js'
 
 import { onMounted, ref, computed } from 'vue';
 
@@ -565,12 +569,14 @@ const { getCustomers, customers } = useCustomers();
 const { origins_and_destinations, getOriginsAndDestinations } = useOriginsAndDestinations();
 const { fences, getFences } = useFences();
 const { routes, getRoutes } = useRoutes();
+const { fees, getFees } = useFees();
 
 var customer = ref({});
 const sender = ref([]);
 const receiver = ref([]);
-
-
+const feeretention = ref(false)
+const fee = ref('');
+const feeamount = ref('')
 
 
 const props = defineProps({
@@ -587,7 +593,7 @@ const saveAgreement = async () => {
     Agreement.value.receiver = receiver.value;
     Agreement.value.currency = customer.value.currency;
 
-    Agreement.value.agreementfees = agreementFeeList;
+    //Agreement.value.fees = agreementFeeList;
     //console.log(form);
     //await storeAgreement({ ...form });
     updateAgreement(props.id);
@@ -599,18 +605,26 @@ onMounted(() => {
     getFences()
     getRoutes()
     getCustomers()
-
+    getFees();
 })
 
+const deletecFee = (index) => {
+    Agreement.value.fees.splice(index, 1);
+}
+
 const addAgreementFeeToList = () => {
-  //  alert("test");
-    agreementFeeList.value.push({
+    //  alert("test");
+    Agreement.value.fees.push({
         'fee': fee.value,
-        'ammount': feeamount.value,
-        'retention': feeretention.value
+        'pivot': {
+            'amount': feeamount.value,
+            'retention': feeretention.value,
+         },
+        
     });
     open.value = false;
 }
+const open = ref(false)
 
 watch(Agreement, (newAgreement) => {
     customer.value = newAgreement.customer;
