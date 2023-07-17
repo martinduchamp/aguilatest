@@ -64,9 +64,9 @@ class AgreementController extends Controller
         foreach ($fees as &$value) {
             $feeid[] = [
                 'agreement_id' => $agreement->id,
-                'fee_id' => $value['fee'],
-                'amount' => $value['amount'],
-                'retention' => $value['retention']
+                'fee_id' => $value['fee']['id'],
+                'amount' => $value['pivot']['amount'],
+                'retention' => $value['pivot']['retention']
             ];
         }
 
