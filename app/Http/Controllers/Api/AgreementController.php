@@ -34,7 +34,7 @@ class AgreementController extends Controller
             $feeid[] = [
                 'agreement_id' => $agreement->id,
                 'fee_id' => $value['fee']['id'],
-                'amount' => $value['ammount'],
+                'amount' => $value['amount'],
                 'retention' => $value['retention']
             ];
         }
